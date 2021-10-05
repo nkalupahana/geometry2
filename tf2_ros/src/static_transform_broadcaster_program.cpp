@@ -81,7 +81,7 @@ static std::string parse_args(
       saw_quat_flag = true;
       try {
         quat.setX(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --qx argument as float";
       }
     } else if (args[i] == "--qy") {
@@ -92,7 +92,7 @@ static std::string parse_args(
       saw_quat_flag = true;
       try {
         quat.setY(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --qy argument as float";
       }
     } else if (args[i] == "--qz") {
@@ -103,7 +103,7 @@ static std::string parse_args(
       saw_quat_flag = true;
       try {
         quat.setZ(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --qz argument as float";
       }
     } else if (args[i] == "--qw") {
@@ -114,7 +114,7 @@ static std::string parse_args(
       saw_quat_flag = true;
       try {
         quat.setW(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --qw argument as float";
       }
     } else if (args[i] == "--roll") {
@@ -125,7 +125,7 @@ static std::string parse_args(
       saw_rpy_flag = true;
       try {
         roll = std::stod(args[++i]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --roll argument as float";
       }
     } else if (args[i] == "--pitch") {
@@ -136,7 +136,7 @@ static std::string parse_args(
       saw_rpy_flag = true;
       try {
         pitch = std::stod(args[++i]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --pitch argument as float";
       }
     } else if (args[i] == "--yaw") {
@@ -147,7 +147,7 @@ static std::string parse_args(
       saw_rpy_flag = true;
       try {
         yaw = std::stod(args[++i]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --yaw argument as float";
       }
     } else if (args[i] == "--x") {
@@ -158,7 +158,7 @@ static std::string parse_args(
       saw_trans_flag = true;
       try {
         trans.setX(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --x argument as float";
       }
     } else if (args[i] == "--y") {
@@ -169,7 +169,7 @@ static std::string parse_args(
       saw_trans_flag = true;
       try {
         trans.setY(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --y argument as float";
       }
     } else if (args[i] == "--z") {
@@ -180,7 +180,7 @@ static std::string parse_args(
       saw_trans_flag = true;
       try {
         trans.setZ(std::stod(args[++i]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse --z argument as float";
       }
     } else if (args[i] == "--frame-id") {
@@ -217,34 +217,34 @@ static std::string parse_args(
     }
     try {
       trans.setX(std::stod(no_flag_args[0]));
-    } catch (const std::invalid_argument & e) {
+    } catch (const std::invalid_argument &) {
       return "Failed to parse X argument as float";
     }
     try {
       trans.setY(std::stod(no_flag_args[1]));
-    } catch (const std::invalid_argument & e) {
+    } catch (const std::invalid_argument &) {
       return "Failed to parse Y argument as float";
     }
     try {
       trans.setZ(std::stod(no_flag_args[2]));
-    } catch (const std::invalid_argument & e) {
+    } catch (const std::invalid_argument &) {
       return "Failed to parse Z argument as float";
     }
 
     if (no_flag_args.size() == 8) {
       try {
         yaw = std::stod(no_flag_args[3]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse yaw argument as float";
       }
       try {
         pitch = std::stod(no_flag_args[4]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse pitch argument as float";
       }
       try {
         roll = std::stod(no_flag_args[5]);
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse roll argument as float";
       }
 
@@ -254,22 +254,22 @@ static std::string parse_args(
     } else {
       try {
         quat.setX(std::stod(no_flag_args[3]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse qx argument as float";
       }
       try {
         quat.setY(std::stod(no_flag_args[4]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse qy argument as float";
       }
       try {
         quat.setZ(std::stod(no_flag_args[5]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse qz argument as float";
       }
       try {
         quat.setW(std::stod(no_flag_args[6]));
-      } catch (const std::invalid_argument & e) {
+      } catch (const std::invalid_argument &) {
         return "Failed to parse qw argument as float";
       }
       frame_id = no_flag_args[7];
