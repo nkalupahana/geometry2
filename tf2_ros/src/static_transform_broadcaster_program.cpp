@@ -290,7 +290,7 @@ static std::string parse_args(
   return "";
 }
 
-static void _print_usage()
+static void print_usage()
 {
   const char * usage =
     "usage: static_transform_publisher [--x X] [--y Y] [--z Z] [--qx QX] [--qy QY] "
@@ -330,11 +330,11 @@ int main(int argc, char ** argv)
   std::string ret = parse_args(args, help, rotation, translation, frame_id, child_frame_id);
   if (ret != "") {
     RCUTILS_LOG_ERROR("error parsing command line arguments: %s", ret.c_str());
-    _print_usage();
+    print_usage();
     return 1;
   }
   if (help) {
-    _print_usage();
+    print_usage();
     return 0;
   }
 
@@ -359,7 +359,7 @@ int main(int argc, char ** argv)
 
   RCLCPP_INFO(
     node->get_logger(),
-    "Spinning until killed publishing transform\ntranslation: ('%lf', '%lf', '%lf')\n"
+    "Spinning until stopped - publishing transform\ntranslation: ('%lf', '%lf', '%lf')\n"
     "rotation: ('%lf', '%lf', '%lf', '%lf')\nfrom '%s' to '%s'",
     translation.x(), translation.y(), translation.z(),
     rotation.x(), rotation.y(), rotation.z(), rotation.w(),
